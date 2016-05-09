@@ -14,14 +14,15 @@ STATICS:=$(wildcard $(STATICSDIR)/*.js $(STATICSDIR)/*.css)
 PUBSTATICS:=$(addprefix $(PUBDIR)/, $(STATICS))
 
 all: $(DSTMD) $(HTMLS) $(PUBSTATICS) $(INDEX_PAGE)
+
 clean:
 	rm -rf $(PUBDIR)/*
 
 $(PUBDIR)/%.md: %.md
 	@mkdir -p $(@D)
 	cp $< $@
-$(PUBDIR)/%.html: $(PUBDIR)/%.md
-	pandoc $< -o $@
+$(PUBDIR)/%.html: $(PUBDIR)/%.md $(INDEX_TEMPLATE) $(INDEX_YAML)
+	pandoc --template $(INDEX_TEMPLATE) $(INDEX_YAML) $< -o $@
 
 $(PUBDIR)/$(STATICSDIR)/%.js: $(STATICSDIR)/%.js
 	@mkdir -p $(@D)
@@ -30,6 +31,9 @@ $(PUBDIR)/$(STATICSDIR)/%.css: $(STATICSDIR)/%.css
 	@mkdir -p $(@D)
 	cp $< $@
 
-$(INDEX_PAGE): $(INDEX_TEMPLATE) $(INDEX_YAML)
+$(INDEX_PAGE): README.md $(INDEX_TEMPLATE) $(INDEX_YAML)
 	@mkdir -p $(@D)
-	pandoc --template $(INDEX_TEMPLATE) $(INDEX_YAML) -o $(INDEX_PAGE)
+	pandoc --template $(INDEX_TEMPLATE) $(INDEX_YAML) $< -o $(INDEX_PAGE)
+
+%.md: $($(subst .,/, $@):%/md=%.md)
+	cp $< $@
