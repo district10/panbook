@@ -12,5 +12,6 @@ install:
 script:
   - cd ~/build/district10/panbook;
   - make
+  - make index
   - cat conf.json.in | sed -e "s/QiNiuAK/$QiNiuAK/" | sed -e "s/QiNiuSK/$QiNiuSK/" > conf.json
   - make qiniu

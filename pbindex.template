@@ -1,0 +1,7 @@
+$body$
+
+<ul class="pblinks">
+$for(fragments)$
+<li><a href="$fragments$">$fragments$</a></li>
+$endfor$
+</ul>
