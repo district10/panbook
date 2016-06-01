@@ -1,5 +1,5 @@
 language: c
-sudo: false
+sudo: required
 before_install:
   - export PATH="/tmp/bin:$HOME/bin:$PATH"
 install:
@@ -7,6 +7,8 @@ install:
   - wget https://github.com/whudoc/statics/raw/master/qrsync.tar.gz
   - tar xfz qrsync.tar.gz
   - chmod +x qrsync
+  - wget https://github.com/jgm/pandoc/releases/download/1.17/pandoc-1.17-1-amd64.deb
+  - sudo dpkg -i pandoc*.deb
 script:
   - cd ~/build/district10/panbook;
   - make
