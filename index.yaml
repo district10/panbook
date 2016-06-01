@@ -1,30 +1,30 @@
 ---
 pb-index:
 
-  - url: /01-pandoc-basics/index.html
+  - url: /fragments/01-pandoc-basics/index.html
     title: Pandoc Basics
     pb-index:
 
-      - url: /01-pandoc-basics/markdown.html
+      - url: /fragments/01-pandoc-basics/markdown.html
         title: Markdown is cool, but, naive
 
-      - url: /01-pandoc-basics/pandoc.html
+      - url: /fragments/01-pandoc-basics/pandoc.html
         title: Pandoc is more than Markdown
 
-  - url: /02-pandoc-advanced/index.html
+  - url: /fragments/02-pandoc-advanced/index.html
     title: Power of Pandoc
     pb-index:
 
-      - url: /02-pandoc-advanced/templates.html
+      - url: /fragments/02-pandoc-advanced/templates.html
         title: Templates
 
-      - url: /02-pandoc-advanced/filters.html
+      - url: /fragments/02-pandoc-advanced/filters.html
         title: Filters
 
-  - url: /03-pandoc-guru/index.html
+  - url: /fragments/03-pandoc-guru/index.html
     title: Pandoc Guru
     pb-index:
 
-      - url: /03-pandoc-guru/haskell.html
+      - url: /fragments/03-pandoc-guru/haskell.html
         title: Haskell is a Programming Language
 ...

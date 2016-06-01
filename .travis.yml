@@ -1,0 +1,14 @@
+language: c
+sudo: false
+before_install:
+  - export PATH="/tmp/bin:$HOME/bin:$PATH"
+install:
+  - mkdir -p /tmp/bin && cd /tmp/bin
+  - wget https://github.com/whudoc/statics/raw/master/qrsync.tar.gz
+  - tar xfz qrsync.tar.gz
+  - chmod +x qrsync
+script:
+  - cd ~/build/district10/panbook;
+  - make
+  - cat conf.json.in | sed -e "s/QiNiuAK/$QiNiuAK/" | sed -e "s/QiNiuSK/$QiNiuSK/" > conf.json
+  - make qiniu
