@@ -65,3 +65,11 @@ index:
 
 %.md: $($(subst .,/, $@):%/md=%.md)
 	cp $< $@
+
+shit:
+	pandoc <<EOF
+	## Nice
+	- good
+	- bad
+	- gread
+	EOF

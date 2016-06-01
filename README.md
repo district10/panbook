@@ -10,3 +10,4 @@
 # Acknowledgements
 
 -   [codrops/SidebarTransitions: Some inspiration for transition effects for off-canvas navigations.](https://github.com/codrops/SidebarTransitions)
+-   [sindresorhus/github-markdown-css: The minimal amount of CSS to replicate the GitHub Markdown style](https://github.com/sindresorhus/github-markdown-css)
