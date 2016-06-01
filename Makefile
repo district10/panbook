@@ -58,6 +58,7 @@ $(INDEX_PAGE): README.md $(INDEX_TEMPLATE)
 	pandoc $(PANDOC_OPTIONS) --template $(INDEX_TEMPLATE) $(INDEX_YAML) $< -o $(INDEX_PAGE)
 
 index:
+	chmod +x ./pbindex.sh
 	./pbindex.sh > $(PBINDEX_YAML) && \
 	echo "## Panbook Index" | \
 	pandoc $(PANDOC_OPTIONS) --template pbindex.template $(PBINDEX_YAML) > $(PBINDEX_PAGE)
