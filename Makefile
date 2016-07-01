@@ -26,6 +26,8 @@ PANDOC_OPTIONS:= --ascii -f markdown+east_asian_line_breaks+emoji+abbreviations
 all: $(DSTMD) $(HTMLS) $(DSTHTMLS) $(PUBSTATICS) $(INDEX_PAGE) $(FRAGS)
 clean:
 	rm -rf $(PUBDIR)
+gh:
+	git add -A; git commit -m "done"; git push
 serve:
 	cd publish && python -m SimpleHTTPServer
 qiniu:

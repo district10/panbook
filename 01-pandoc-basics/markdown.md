@@ -17,17 +17,17 @@ You can indicate emphasis with **bold**, *italic*, or ~~strikethrough~~ text.
 
 ## Quoting text
 
-You can quote text with a `>`.
+You can quote text with a `>`.:
 
-```markdown
-In the words of Abraham Lincoln:
+:   ```markdown
+    In the words of Abraham Lincoln:
 
->   Pardon my French
-```
+    >   Pardon my French
+    ```
 
-In the words of Abraham Lincoln:
+    In the words of Abraham Lincoln:
 
->   Pardon my French
+    >   Pardon my French
 
 ## Lists
 

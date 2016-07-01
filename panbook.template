@@ -10,7 +10,7 @@
         <style type="text/css">
             code{ white-space: pre; }
             q   { quotes: "“" "”" "‘" "’"; }
-            #markdownbody, .markdown-body {
+            .markdown-body {
                 box-sizing: border-box;
                 min-width: 200px;
                 max-width: 980px;
@@ -18,7 +18,7 @@
                 padding: 45px;
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="/css/component.css" />
+        <link rel="stylesheet" type="text/css" href="/css/components-right.css" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -36,11 +36,11 @@
             <nav class="st-menu st-effect-12" id="menu-12">
                 <h2 id="panbookhome"><i class="icon-heart"></i> Panbook</h2>
                 <ul>
-                    <li><a href="/fragments/pbindex.html" class="icon icon-photo">Index</a></li>
+                    <li><a href="/fragments/pbindex.html">Index</a></li>
 $for(pb-index)$
-                    <li><a href="$pb-index.url$" class="icon icon-photo">$pb-index.title$</a></li>
+                    <li><a href="$pb-index.url$">$pb-index.title$</a></li>
 $for(pb-index.pb-index)$
-                    <li><a href="$pb-index.pb-index.url$" class="pure-menu-link">$pb-index.pb-index.title$</a></li>
+                    <li><a href="$pb-index.pb-index.url$">$pb-index.pb-index.title$</a></li>
 $endfor$
 $endfor$
                 </ul>
@@ -56,18 +56,47 @@ $endfor$
                                 <a href="https://github.com/district10/panbook"><i class="icon-github"></i> Fork me on GitHub</a></span>
                         </div>
 
-                        <div id="panbookbody" class="markdown-body">
-                        $body$
+                        <div id="tabNav">
+                            <ul>
+                                <li><a href="#tab1">GitHub Style</a></li>
+                                <li><a href="#tab2">Panbook Style</a></li>
+                            </ul>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="tabs">
+                            <div id="tab1">
+                                <div id="panbookbody-github" class="markdown-body">
+                                $body$
+                                </div>
+                            </div>
+                            <div id="tab2">
+                                <div id="panbookbody-native">
+                                $body$
+                                </div>
+                            </div>
                         </div>
 
-                        </div>
+                        <div class="diagram">A->B: Message</div>
+                        <div id="diagram">Diagram will be placed here</div>
+
                     </div>
                 </div>
             </div>
         </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.idTabs.min.js"></script>
+
+        <script src="/js/underscore-min.js"></script>
+        <script src="/js/raphael.min.js"></script>
+        <script src="/js/sequence-diagram-min.js"></script>
+        <script src="/js/flowchart.min.js"></script>
+
+        <!--
+        <script src="/js/animated-grid-layout.js"></script>
+        -->
+
         <script src="/js/classie.js"></script>
         <script src="/js/sidebarEffects.js"></script>
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/panbook.js"></script>
     </body>
 </html>
